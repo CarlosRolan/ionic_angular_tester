@@ -1,0 +1,39 @@
+<app-my-header title="Forms"></app-my-header>
+
+<ion-content class="ion-padding">
+
+  <h1>FORMS</h1>
+  <!-- [IMPORTANT] We can send the reference of the form var itself to use it, instead of "this.user" -->
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <!-- [NOTE] This is how we declare var in Angular so as in Ionic -->
+    <ion-list-header>
+      <ion-label>Form valid? : {{form.valid}}</ion-label>
+    </ion-list-header>
+
+    <!-- [IMPORTANT] This is the regular expression to make the validation of an email input -->
+    <!-- pattern="^([a-zA-Z0-9_\-\. ]+)@([a-zA-Z0-9_\-\.]+)\.( [a-zA-Z]{2,5})$" -->
+
+    <ion-item>
+      <ion-label>Name:</ion-label>
+      <ion-input type="text" placeholder="Your Name" name="name" [(ngModel)]="user.name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" placeholder="Your Password" name="password" [(ngModel)]="user.password" required>
+      </ion-input>
+    </ion-item>
+
+    <!-- [IMPORTANT] The disable property is needed to make sure the form is valid before submited -->
+    <ion-button type="submit" expand="block" [disabled]="form.invalid">
+      SUBMIT
+    </ion-button>
+  </form>
+
+</ion-content>

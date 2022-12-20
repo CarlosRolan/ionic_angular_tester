@@ -1,0 +1,18 @@
+<app-my-header title="Reorder List"></app-my-header>
+
+<ion-content>
+
+  <ion-list>
+    <!-- [NOTE] In contradition of ion-item-sliding all items should be inside the tag -->
+    <ion-reorder-group disabled="false" (ionItemReorder)="doReorder( $event)">
+
+      <ion-item *ngFor="let hero of heros">
+        <ion-label>{{hero}}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+    </ion-reorder-group>
+
+  </ion-list>
+
+</ion-content>

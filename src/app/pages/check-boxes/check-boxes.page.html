@@ -1,0 +1,35 @@
+<app-my-header title="ChechBoxes"></app-my-header>
+
+<ion-content>
+
+  <ion-list>
+    <!-- [i] checkBox_default -->
+    <ion-item>
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>Default</ion-label>
+    </ion-item>
+    <!-- [i] checkBox_end -->
+    <ion-item>
+      <ion-checkbox slot="end"></ion-checkbox>
+      <ion-label>End</ion-label>
+    </ion-item>
+    <!-- [i] checkBox_inderterminate -->
+    <ion-item>
+      <ion-checkbox slot="start" [indeterminate]="true"></ion-checkbox>
+      <ion-label>Indeterminate checkbox</ion-label>
+    </ion-item>
+    <!-- [i] checkBox_custom -->
+    <ion-item class="custom">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>Themed checkbox</ion-label>
+    </ion-item>
+    <!-- [i] checkBox_event -->
+    <!-- [IMPORTANT] Remember tho get the this. funcitonality $event -->
+    <ion-item (click)="onClick($event)">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>Event checkbox</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,19 @@
+<app-my-header title="SCANNER"></app-my-header>
+
+  <ion-content >
+    
+    <ion-text color="primary">
+      <h1>Barcodes / QR </h1>
+    </ion-text>
+    <ion-item>
+      <ion-label>Input</ion-label>
+      <ion-input [(ngModel)]="scannedData"></ion-input>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="scanBarcode()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-content>

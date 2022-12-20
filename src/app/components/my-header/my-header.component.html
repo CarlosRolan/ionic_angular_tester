@@ -1,0 +1,21 @@
+<ion-header>
+  <!-- [IMPORTATN] Ionic divides the placement of components in slot:{start, center,end} -->
+
+  <ion-toolbar>
+    <!-- The mode="ios" force the theme in all platforms -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Return" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-capitalize">{{title}}</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<!-- <ion-content> -->
+<!-- [NOTE] If u want to declare the buttons inside the CONTTENT is recomended to slot="end"-->
+<!-- <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" text="Return" color="primary" mode="ios"></ion-back-button>
+  </ion-buttons> -->
+<!-- </ion-content> -->

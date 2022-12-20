@@ -1,0 +1,81 @@
+<app-my-header title="Date Time"></app-my-header>
+
+<ion-content>
+
+  <!-- [IMPORTANT] Presentation values DATE =  month-year, year-month, month, or year  -->
+  <!-- [IMPORTANT] Presentation values DATE-TIME=  date-time, time-date, or time to the presentation property.  -->
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Date Time</ion-label>
+    </ion-list-header>
+
+    <!-- [i] dateTime_full_presentation -->
+    <ion-item>
+      <ion-label>Date 0 Full</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" [value]="today.toISOString()"
+        (ionChange)="onDateChange( $event )">
+      </ion-datetime>
+    </ion-item>
+    <!-- [i] dateTime_month_year -->
+    <ion-item>
+      <ion-label>Date Month-Year</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" [value]="today.toISOString()" (ionChange)="onDateChange( $event )"
+        presentation="month-year">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- [i] dateTime_month -->
+    <ion-item>
+      <ion-label>Date Month</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" [value]="today.toISOString()" (ionChange)="onDateChange( $event )"
+        presentation="month">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- [i] dateTime_year -->
+    <ion-item>
+      <ion-label>Date Year</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" [value]="today.toISOString()" (ionChange)="onDateChange( $event )"
+        presentation="year">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restrictions</ion-label>
+    </ion-list-header>
+
+    <!-- [i] dateTime_restrinctions -->
+    <ion-item>
+      <ion-label>Min - Max</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" min="2019-01-01" max="2022-01-05">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- [i] dateTime_custom_values -->
+    <!-- [NOTE] [pickerOptions]=customPickerOptions is the old way now  -->
+    <ion-item>
+      <ion-label>Custom Values</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" [yearValues]="yearValues" [monthValues]="monthValues">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- [i] dateTime_custom_buttons -->
+    <ion-item>
+      <ion-label>Custom Picker Options</ion-label>
+      <!-- [IMPORTANT] We need to add the REFERENCE (#datetime) -->
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" #datetime>
+      <!-- [NOTE] This is the old way to do it -->
+        <!-- <ion-datetime display-format="DD.MM.YYYY HH:mm" [pickerOptions]="customPickerOptions"></ion-datetime> -->
+        <ion-buttons slot="buttons">
+          <ion-button color="danger" (click)="datetime.reset()">Reset</ion-button>
+          <ion-button color="primary" (click)="datetime.cancel()">Never mind</ion-button>
+          <ion-button color="primary" (click)="datetime.confirm()">All Set</ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+

@@ -1,0 +1,8 @@
+<ion-content>
+  <ion-list *ngFor="let c of itemList">
+    <ion-item>
+      <ion-icon [name]="c.icon" slot="start" [routerLink]="c.redirectTo" color="primary" detail="true"></ion-icon>
+      {{c.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>
